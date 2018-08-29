@@ -1,0 +1,8 @@
+
+1. Grant permission to another user
+You can either change the owner of the file with
+[sudo] chown username: foldername
+or you can add the user to the group and own file
+usermod -a -G {group-name} username
+or use below command to recursively to all subdir and files
+setfacl -R -m u:username:rwx myfolder

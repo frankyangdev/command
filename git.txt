@@ -1,0 +1,13 @@
+1. Remove file from Git repo but file is still in history
+git rm file1.txt
+git commit -m "remove file1.txt"
+
+Remove the file only from the Git repository and not delete it from the filesystem, use:
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+and push changes to remote repo
+git push origin branch_name  
+
+remove file on github with historical information
+git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch file_name_with_path' 
+git push --force -u origin master
