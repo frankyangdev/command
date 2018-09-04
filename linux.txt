@@ -6,3 +6,26 @@ or you can add the user to the group and own file
 usermod -a -G {group-name} username
 or use below command to recursively to all subdir and files
 setfacl -R -m u:username:rwx myfolder
+
+2. Check when was the file /var/log/wtmp was written last, you can use stat command:
+
+stat /var/log/wtmp
+
+In order to print the output in reverse, you can pipe output of last to GNU tac (opposite of cat) as follows:
+
+last | tac
+
+reports the most recent login of all users or of a given user
+
+lastlog 
+
+To find out the users that have logged into a system in the last 100 days.
+lastlog -b 0 -t 100
+
+3. find directory and delete file for older than 30 days.
+
+find /dir/* -type d -ctime +30 -exec rm -rf {} \
+
+find file and delete file for older than 30 days.
+
+find /dir/ -type f -name '*.filetype' -mtime +30 -exec rm {} \;
