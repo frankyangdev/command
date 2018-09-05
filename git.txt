@@ -11,3 +11,13 @@ git push origin branch_name
 remove file on github with historical information
 git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch file_name_with_path' 
 git push --force -u origin master
+
+2. Merge branch dev to master branch after you finish development
+git checkout dev (create and edit your file)
+git add .
+git commit -m "update file"
+git merge branch  (this will make sure latest master sync to your dev version)
+git checkout master
+git merge dev
+git push origin master
+
