@@ -29,3 +29,6 @@ find /dir/* -type d -ctime +30 -exec rm -rf {} \
 find file and delete file for older than 30 days.
 
 find /dir/ -type f -name '*.filetype' -mtime +30 -exec rm {} \;
+
+4. Find linux version
+cat /etc/os-release
